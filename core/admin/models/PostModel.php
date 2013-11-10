@@ -11,7 +11,7 @@ class PostModel
     public static function getConnection()
     {
         if (null === self::$pdoConnection) {
-            self::$pdoConnection = new PDO('mysql:host=localhost;dbname=simple_blog', 'root', 'asd123456789');
+            self::$pdoConnection = new PDO('mysql:host=localhost;dbname=simple_blog', 'root', 'asd123456789', array(PDO::MYSQL_ATTR_INIT_COMMAND => 'SET NAMES "UTF8"'));
         }
 
         return self::$pdoConnection;
@@ -26,8 +26,7 @@ class PostModel
 
     public function savePost($title, $content)
     {
-        $c = new PDO('mysql:host=localhost;dbname=simple_blog', 'root', 'asd123456789');
-        $st = $c->prepare(
+        $st = self::getConnection()->prepare(
                 'INSERT INTO posts 
                 (title, content) 
                 VALUES 

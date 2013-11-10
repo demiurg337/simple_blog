@@ -1,5 +1,5 @@
 <form action="<?php echo $this->getUrl('post/add'); ?>" method="post">
-    <input type="text" name="caption">
+    <input type="text" name="title">
     <br>
     <textarea name="content">
     </textarea>
