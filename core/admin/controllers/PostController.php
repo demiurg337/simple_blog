@@ -13,7 +13,6 @@ class PostController
     {
         $res = $this->render('add_post');
         
-        print_r($_POST);
         if (isset($_POST['content']) && isset($_POST['title'])) {
             $model = new PostModel();
             var_dump($model->savePost($_POST['title'], $_POST['content']));

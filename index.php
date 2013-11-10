@@ -1,6 +1,6 @@
 <?php 
-ini_set('display_errors', 1);
-error_reporting(E_ALL);
+//ini_set('display_errors', 1);
+//error_reporting(E_ALL);
 
 header('Content-Type: text/html; charset=utf-8');
 define(BASE_PATH, __DIR__);
@@ -9,12 +9,12 @@ $route = str_replace('/index.php/','', $route);
 $parts = explode('/', $route);
 $parts[0] = ucfirst($parts[0]);
 
-var_dump(require_once __DIR__.'/core/admin/controllers/PostController.php');
-echo __DIR__.'/core/admin/controllers/PostController.php';
+require_once __DIR__.'/core/admin/controllers/PostController.php';
 $c = new PostController;
 
 $c->$parts[1]();
-var_dump($c);
-echo $route;
-print_r($parts);
+//var_dump($c);
+//echo $route;
+//:w
+//print_r($parts);
 ?>
