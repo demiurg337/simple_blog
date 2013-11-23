@@ -14,6 +14,7 @@ body {
 
 h1 {
     font: 30px/118% normal Verdana, Tahoma, sans-serif;
+    color: #b58900;
 }
 
 .content-table {
@@ -25,3 +26,37 @@ h1 {
     border: 1px #94a1a1 solid;
     padding: 5px;
 }
+
+form input,
+form textarea {
+    width: 100%;
+}
+
+input[type="submit"] {
+    height: 33px;
+}
+
+form textarea {
+    height: 300px;
+}
+
+.red {
+    color: #dc322f;
+}
+
+.error-message-container,
+.success-message-container {
+    width: 94%;
+    padding: 3%;
+    border-radius: 4px;
+    color: #ffa643;
+}
+.error-message-container {
+    background-color: #dc322f;
+}
+
+.success-message-container {
+   background-color: #2aa198; 
+}
+
+
