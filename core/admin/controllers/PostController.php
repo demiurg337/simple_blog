@@ -11,14 +11,31 @@ class PostController
 
     public function add()
     {
-        $res = $this->render('add_post');
         
-        if (isset($_POST['content']) && isset($_POST['title'])) {
+        if (isset($_POST['content']) && isset($_POST['title']) && strlen($_POST['content'])>0 && strlen($_POST['title'])>0) {
             $model = new PostModel();
-            var_dump($model->savePost($_POST['title'], $_POST['content']));
+  
+            if ($model->savePost($_POST['title'], $_POST['content'])) {
+                $params['successMsg'] = 'Статья успешно добавлена';    
+            }
+            else {
+                $params['errorMsg'] = 'При сохранении статьи случилась ошибка';
+            }
         }
-       
-       echo $res; 
+        //when send form and some fields is empty 
+        elseif (isset($_POST['content'])) {
+            $params['errorMsg'] = 'Нужно заполнить все обязательные поля';
+        }
+
+
+        if (isset($params)) {
+            $res = $this->render('add_post', $params);
+        }
+        else {
+            $res = $this->render('add_post');
+        }       
+        
+        echo $res; 
     }
 
     public function render($name, array $params = array())
