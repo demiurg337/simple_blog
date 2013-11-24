@@ -3,14 +3,14 @@ require_once __DIR__.'/../models/PostModel.php';
 require_once __DIR__.'/../../common/BaseController.php';
 class PostController extends BaseController
 {
-    public function index()
+    public function actionIndex()
     {
         $model = new PostModel();
         echo $this->render('posts_list_table', array('posts' => $model->getListPosts()));
         //var_dump( $model->getListPosts());
     }
 
-    public function add()
+    public function actionAdd()
     {
         
         if (isset($_POST['content']) && isset($_POST['title']) && strlen($_POST['content'])>0 && strlen($_POST['title'])>0) {
@@ -53,7 +53,6 @@ class PostController extends BaseController
 
     public function getUrl($route)
     {
-        //echo '/index.php/admin/'.$route;
         return '/index.php/admin/'.$route;
     }
 }

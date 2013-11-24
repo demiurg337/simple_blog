@@ -4,6 +4,8 @@ error_reporting(E_ALL);
 
 header('Content-Type: text/html; charset=utf-8');
 define('BASE_PATH', __DIR__);
+define('ACTION_PREFIX', 'action');
+
 $route = $_SERVER['REQUEST_URI'];
 $route = str_replace('/index.php/','', $route);
 
@@ -31,7 +33,7 @@ if (file_exists($controllerPath)) {
     }
 
     $controller = new $controllerName();
-    $controller->$actionName();
+    $controller->{ACTION_PREFIX.$actionName}();
     
     var_dump($controller);
 }
