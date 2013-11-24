@@ -27,7 +27,7 @@ if (file_exists($controllerPath)) {
     require_once $controllerPath;
     
     if (!method_exists($controllerName, $actionName)) {
-        //-------------------------
+        //stop-------------------------
     }
 
     $controller = new $controllerName();
