@@ -51,8 +51,8 @@ class PostController extends BaseController
         return BASE_PATH.'/core/admin/views';
     }
 
-    public function getUrl($route)
+    public function getUrl($controller, $action)
     {
-        return '/index.php/admin/'.$route;
+        return '/index.php/admin/'.$controller.'/'.$action;
     }
 }

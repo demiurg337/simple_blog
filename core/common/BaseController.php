@@ -26,7 +26,7 @@ abstract class BaseController
     * @param String $route String that represent route.
     * @return String Return Url.
     */
-    abstract public function getUrl($route);
+    abstract public function getUrl($controller, $action);
 
     /**
     * @return String Path where situated views.

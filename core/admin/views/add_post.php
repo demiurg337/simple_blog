@@ -14,7 +14,7 @@
     </div>
 <?php endif; ?>
 
-<form action="<?php echo $this->getUrl('post/add'); ?>" method="post">
+<form action="<?php echo $this->getUrl('post','add'); ?>" method="post">
     <p>
     Заголовок<span class="red">*</span>:
         <br/>
