@@ -14,20 +14,21 @@ $parts = explode('/', $route);
 $controllerPath = '';
 //if only two parts then site route
 if (sizeof($parts) === 2) {
-    //$controllerPath = BASE_PATH.'/core/admin/'.$parts[0].'Controller';
+    $parts[0] = ucfirst($parts[0]);
+    $controllerName = $parts[0].'Controller';
+    $actionName = $parts[1];
+    $controllerPath = BASE_PATH.'/core/site/controllers/'.$controllerName.'.php';
 }
 //if three routes then is route (like /admin/post/index)
-elseif (sizeof($parts) ===3) {
+elseif (sizeof($parts) ===3 && $parts[0] === 'admin') {
     $parts[1] = ucfirst($parts[1]);
     $controllerName = $parts[1].'Controller';
     $actionName = $parts[2];
     $controllerPath = BASE_PATH.'/core/admin/controllers/'.$controllerName.'.php';
 }
 
-
 if (file_exists($controllerPath)) {
     require_once $controllerPath;
-    
     if (!method_exists($controllerName, $actionName)) {
         //stop-------------------------
     }
@@ -38,13 +39,3 @@ if (file_exists($controllerPath)) {
     var_dump($controller);
 }
 
-die;
-require_once __DIR__.'/core/admin/controllers/PostController.php';
-$c = new PostController;
-
-$c->$parts[1]();
-//var_dump($c);
-//echo $route;
-//:w
-//print_r($parts);
-?>
