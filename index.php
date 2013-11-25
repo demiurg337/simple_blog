@@ -22,9 +22,10 @@ if (sizeof($parts) === 2) {
 //if three routes then is route (like /admin/post/index)
 elseif (sizeof($parts) ===3 && $parts[0] === 'admin') {
     $parts[1] = ucfirst($parts[1]);
-    $controllerName = $parts[1].'Controller';
+    $controllerFileName = $parts[1].'Controller';
+    $controllerName = '\core\admin\controllers\\'. $controllerFileName;
     $actionName = $parts[2];
-    $controllerPath = BASE_PATH.'/core/admin/controllers/'.$controllerName.'.php';
+    $controllerPath = BASE_PATH.'/core/admin/controllers/'.$controllerFileName.'.php';
 }
 
 if (file_exists($controllerPath)) {

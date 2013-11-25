@@ -1,5 +1,5 @@
 <?php
-
+namespace core\common;
 abstract class BaseController 
 {
     
