@@ -4,9 +4,9 @@ namespace core\admin\controllers;
 require_once __DIR__.'/../models/PostModel.php';
 require_once __DIR__.'/../../common/BaseController.php';
 
-use core\common;
+use core\common\BaseController;
 use \core\admin\models\PostModel;
-class PostController extends \core\common\BaseController
+class PostController extends BaseController
 {
     public function actionIndex()
     {
