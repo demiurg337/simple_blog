@@ -9,8 +9,8 @@ class PostController extends BaseController
     public function actionIndex()
     {
         $model = new PostModel();
-        $model->getListOfPosts();
-        echo 'zzzzzzzzzzzzzzzz';
+        //var_dump($model->getListOfPosts());
+        echo $this->createTemplate('main', array('body' => 'zzzzzzzzzzzzzqqqq'));
     }
 
     public function getUrl($controller, $action)
@@ -19,6 +19,6 @@ class PostController extends BaseController
 
     public function getViewBasePath()
     {
-
+        return BASE_PATH.'/core/site/views/';
     }
 }
