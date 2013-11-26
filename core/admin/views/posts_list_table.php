@@ -11,7 +11,7 @@
                 <?php echo $post->title; ?>
             </td>
             <td>
-                <?php echo substr($post->content, 0, 700).'...'; ?>
+                <?php echo $post->teaser; ?>
             </td>
             <td>
                 <?php echo  $post->count_comments; ?>

@@ -7,7 +7,7 @@ class PostModel extends BaseModel
 {
     public function getListPosts()
     {
-        $st = self::getConnection()->prepare('SELECT * from posts');
+        $st = self::getConnection()->prepare('SELECT id, title, teaser, count_comments from posts');
         $st->execute();
         return $st->fetchAll(\PDO::FETCH_CLASS);
     }
