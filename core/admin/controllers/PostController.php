@@ -11,7 +11,7 @@ class PostController extends BaseController
     public function actionIndex()
     {
         $model = new PostModel();
-        echo $this->render('posts_list_table', array('posts' => $model->getListPosts()));
+        $this->render('posts_list_table', array('posts' => $model->getListPosts()));
         //var_dump( $model->getListPosts());
     }
 
@@ -45,20 +45,13 @@ class PostController extends BaseController
 
 
         if (isset($params)) {
-            $res = $this->render('add_post', $params);
+            $this->render('add_post', $params);
         }
         else {
-            $res = $this->render('add_post');
+            $this->render('add_post');
         }       
-        
-        echo $res; 
     }
 
-    public function render($name, array $params = array())
-    {
-        $body = $this->createTemplate($name, $params);
-        return $this->createTemplate('main', array('body' => $body));
-    }
 
 
     protected function getViewBasePath()

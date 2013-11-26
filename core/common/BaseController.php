@@ -29,7 +29,7 @@ abstract class BaseController
     public function render($name, array $params = array())
     {
         $body = $this->createTemplate($name, $params);
-        return $this->createTemplate('main', array('body' => $body));
+        echo $this->createTemplate('main', array('body' => $body));
     }
 
 
