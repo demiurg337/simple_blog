@@ -13,7 +13,6 @@ class PostModel extends BaseModel
         );
 
         $st->execute();
-        $res = $st->fetchAll(\PDO::FETCH_CLASS);
-        print_r($res);
+        return $st->fetchAll(\PDO::FETCH_CLASS);
     }
 }
