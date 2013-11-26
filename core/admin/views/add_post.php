@@ -23,8 +23,14 @@
     
     <p>
         Текст статьи<span class="red">*</span>:
-        <br>
+        <br/>
         <textarea name="content">
+        </textarea>
+    </p>
+    <p>
+        Тизер (то что показывается в списке постов)<span class="red">*</span>:
+        <br/>
+        <textarea name="teaser">
         </textarea>
     </p>
     <br>

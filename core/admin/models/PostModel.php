@@ -12,16 +12,17 @@ class PostModel extends BaseModel
         return $st->fetchAll(\PDO::FETCH_CLASS);
     }
 
-    public function savePost($title, $content)
+    public function savePost($title, $content, $teaser)
     {
         $st = self::getConnection()->prepare(
                 'INSERT INTO posts 
-                (title, content) 
+                (title, content, teaser) 
                 VALUES 
-                (:title, :content)');
+                (:title, :content, :teaser)');
             
         $st->bindValue(':title', $title, \PDO::PARAM_STR);
         $st->bindValue(':content', $content, \PDO::PARAM_STR);
+        $st->bindValue(':teaser', $teaser, \PDO::PARAM_STR);
 
         return $st->execute();
     }

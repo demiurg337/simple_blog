@@ -18,10 +18,20 @@ class PostController extends BaseController
     public function actionAdd()
     {
         
-        if (isset($_POST['content']) && isset($_POST['title']) && strlen($_POST['content'])>0 && strlen($_POST['title'])>0) {
+        if (
+            isset($_POST['content']) 
+            && 
+            isset($_POST['title']) 
+            && 
+            strlen($_POST['content']) > 0 
+            && 
+            strlen($_POST['title']) > 0
+            &&
+            strlen($_POST['teaser']) > 0
+        ) {
             $model = new PostModel();
   
-            if ($model->savePost($_POST['title'], $_POST['content'])) {
+            if ($model->savePost($_POST['title'], $_POST['content'], $_POST['teaser'])) {
                 $params['successMsg'] = 'Статья успешно добавлена';    
             }
             else {
