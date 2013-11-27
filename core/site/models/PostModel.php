@@ -9,7 +9,7 @@ class PostModel extends BaseModel
     public function getListOfPosts()
     {
         $st = self::getConnection()->prepare(
-            'SELECT * FROM posts'
+            'SELECT id, teaser, count_comments, title FROM posts'
         );
 
         $st->execute();
