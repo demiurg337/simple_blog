@@ -1,0 +1,21 @@
+body {
+    background-color: #fdf6e3;
+    font-size: 13px;
+    line-height: 160%;
+    font-family: Verdana, sans-serif;
+}
+
+.posts-list-block {
+    color: #657b83;
+    width: 960px;
+    margin: 0 auto;
+}
+
+.post-block {
+}
+
+.post-block h1 {
+    border-bottom: 1px solid #657b83;
+    color: #b58900;
+    padding-bottom: 7px;
+}
