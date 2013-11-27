@@ -9,8 +9,9 @@ class PostController extends BaseController
     public function actionIndex()
     {
         $model = new PostModel();
-        //var_dump($model->getListOfPosts());
-        echo $this->createTemplate('main', array('body' => 'zzzzzzzzzzzzzqqqq'));
+        $posts = $model->getListOfPosts();
+        $this->render('list_of_posts', array('posts' => $posts));
+        //echo $this->createTemplate('main', array('body' => 'zzzzzzzzzzzzzqqqq'));
     }
 
     public function getUrl($controller, $action)
